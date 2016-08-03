@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  root 'base#dashboard'
+
+  match '/changes/(:from_date)/(:to_date)' => 'base#changes', :via => 'get'
+  match '/changes_by_service/(:from_date)/(:to_date)' => 'base#changes_by_service', :via => 'get'
+  match '/changes_for_services/(:from_date)/(:to_date)/(:services)' => 'base#changes_for_services', :via => 'get'
+  match '/changes_by_service_and_region/(:from_date)/(:to_date)/(:services)' => 'base#changes_by_service_and_region', :via => 'get'
+  match '/changes_for_services_and_regions/(:from_date)/(:to_date)/(:services)/(:regions)' => 'base#changes_for_services_and_regions', :via => 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -77,7 +77,7 @@
 
 
     def poll_aws
-		aws_ip_ranges_url = URI.parse('https://ip-ranges.amazonaws.com/ip-ranges.json')
+		aws_ip_ranges_url = URI.parse('https://ip-ranges.amazonaws.com/ip-ranges.JSON')
 	    request = Net::HTTP::Get.new(aws_ip_ranges_url.path)
 	    response = Net::HTTP.get(aws_ip_ranges_url)
 	    puts "* Poll successfull!"
